@@ -8,16 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    @IBAction func SinglePlayerBtn(_ sender: Any) {
-        self.performSegue(withIdentifier: "SPViewSegue", sender: self)
-    }
+class SingleplayerController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-
+    
+    
 }
+
 
