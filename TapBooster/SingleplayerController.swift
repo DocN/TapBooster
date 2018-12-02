@@ -23,13 +23,12 @@ class SingleplayerController: UIViewController {
     var acuracyValue = 0;
     var speed = 1.0;
     var timerCount = 1.0;
-
-    var timer = Timer.scheduledTimer(timeInterval: speed, target: self, selector: #selector(generateTarget), userInfo: nil, repeats: true)
+    var timer = Timer();
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
+        timer = Timer.scheduledTimer(timeInterval: speed, target: self, selector: #selector(generateTarget), userInfo: nil, repeats: true)
         let countTime = Timer.scheduledTimer(timeInterval: timerCount, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
@@ -68,7 +67,7 @@ class SingleplayerController: UIViewController {
         if(levelScore >= 10) {
             levelValue=levelValue+1;
             print("Level up");
-            speed=(speed/1.9);
+            speed=(speed/1.1);
             timer.invalidate();
             timer = Timer.scheduledTimer(timeInterval: speed, target: self, selector: #selector(generateTarget), userInfo: nil, repeats: true)
             levelScore = 0;
