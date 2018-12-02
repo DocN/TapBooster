@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1525022B21B288F40017C3F9 /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = 1525022A21B288F30017C3F9 /* target.png */; };
 		159783832181824A000B89CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159783822181824A000B89CA /* AppDelegate.swift */; };
 		159783852181824A000B89CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159783842181824A000B89CA /* ViewController.swift */; };
 		159783882181824A000B89CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 159783862181824A000B89CA /* Main.storyboard */; };
@@ -15,8 +14,9 @@
 		1597838D2181824C000B89CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1597838B2181824C000B89CA /* LaunchScreen.storyboard */; };
 		159783982181824C000B89CA /* TapBoosterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159783972181824C000B89CA /* TapBoosterTests.swift */; };
 		159783A32181824C000B89CA /* TapBoosterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159783A22181824C000B89CA /* TapBoosterUITests.swift */; };
-		159783B1218188F0000B89CA /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 159783B0218188F0000B89CA /* arrow.png */; };
 		159783B32182D883000B89CA /* SingleplayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159783B22182D883000B89CA /* SingleplayerController.swift */; };
+		942E3DCA21B1CE6C0032BCA1 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 942E3DC821B1CE6C0032BCA1 /* arrow.png */; };
+		942E3DCB21B1CE6C0032BCA1 /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = 942E3DC921B1CE6C0032BCA1 /* target.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1525022A21B288F30017C3F9 /* target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = target.png; path = ../../target.png; sourceTree = "<group>"; };
 		1597837F2181824A000B89CA /* TapBooster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapBooster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		159783822181824A000B89CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		159783842181824A000B89CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,8 +50,9 @@
 		1597839E2181824C000B89CA /* TapBoosterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TapBoosterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		159783A22181824C000B89CA /* TapBoosterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBoosterUITests.swift; sourceTree = "<group>"; };
 		159783A42181824C000B89CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		159783B0218188F0000B89CA /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow.png; path = ../../arrow.png; sourceTree = "<group>"; };
 		159783B22182D883000B89CA /* SingleplayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleplayerController.swift; sourceTree = "<group>"; };
+		942E3DC821B1CE6C0032BCA1 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		942E3DC921B1CE6C0032BCA1 /* target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = target.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +103,9 @@
 		159783812181824A000B89CA /* TapBooster */ = {
 			isa = PBXGroup;
 			children = (
-				1525022A21B288F30017C3F9 /* target.png */,
+				942E3DC821B1CE6C0032BCA1 /* arrow.png */,
+				942E3DC921B1CE6C0032BCA1 /* target.png */,
 				159783B22182D883000B89CA /* SingleplayerController.swift */,
-				159783B0218188F0000B89CA /* arrow.png */,
 				159783822181824A000B89CA /* AppDelegate.swift */,
 				159783842181824A000B89CA /* ViewController.swift */,
 				159783862181824A000B89CA /* Main.storyboard */,
@@ -241,8 +241,8 @@
 				1597838D2181824C000B89CA /* LaunchScreen.storyboard in Resources */,
 				1597838A2181824C000B89CA /* Assets.xcassets in Resources */,
 				159783882181824A000B89CA /* Main.storyboard in Resources */,
-				159783B1218188F0000B89CA /* arrow.png in Resources */,
-				1525022B21B288F40017C3F9 /* target.png in Resources */,
+				942E3DCA21B1CE6C0032BCA1 /* arrow.png in Resources */,
+				942E3DCB21B1CE6C0032BCA1 /* target.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
