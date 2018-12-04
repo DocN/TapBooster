@@ -11,6 +11,7 @@ import Firebase
 class WaitingRoomController: UIViewController {
     var player1Name = "";
     var roomPassword = "";
+    var readyToStart = false;
     var db: Firestore!
     var roomid = "";
     @IBOutlet weak var player1: UILabel!
@@ -34,6 +35,10 @@ class WaitingRoomController: UIViewController {
             "Password": roomPassword,
             "Full": false,
             "Started": false,
+            "score1": 0,
+            "score2": 0,
+            "level1": 0,
+            "level2": 0,
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
@@ -47,7 +52,40 @@ class WaitingRoomController: UIViewController {
         let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(checkready), userInfo: nil, repeats: true)
     }
     @IBAction func StartGame(_ sender: Any) {
-        self.performSegue(withIdentifier: "StartGame1Seg", sender: self)
+        if(readyToStart == true) {
+            self.performSegue(withIdentifier: "StartGame1Seg", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "StartGame1Seg" {
+            db.collection("rooms").getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        //print("\(document.documentID) => \(document.data())")
+                        let currentRoom = (document.data()["RoomID"]) as? String;
+                        if(self.roomid==currentRoom) {
+                            let washingtonRef = self.db.collection("rooms").document(document.documentID)
+                            // Set the "capital" field of the city 'DC'
+                            washingtonRef.updateData([
+                                "Started": true,
+                                ]) { err in
+                                    if let err = err {
+                                        print("Error updating document: \(err)")
+                                    } else {
+                                        print("Document successfully updated")
+                                    }
+                            }
+                        }
+                    }
+                }
+            }
+            // telling the compiler what type of VC the sugue.destination is
+            let destinationVC = segue.destination as! VSFrameController
+            destinationVC.roomID = roomid;
+        }
     }
     
     @objc func checkready() {
@@ -64,6 +102,7 @@ class WaitingRoomController: UIViewController {
                             let player2Data = document.data()["player2"] as? String;
                             self.startbtn.backgroundColor = UIColor.green;
                             self.startbtn.setTitle("Ready to Start",for: .normal)
+                            self.readyToStart = true;
                         self.startbtn.setTitleColor(UIColor.black,for: .normal)
                             self.player2.text = player2Data;
                         }

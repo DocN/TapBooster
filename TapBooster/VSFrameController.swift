@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 
 class VSFrameController: UIViewController {
+
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var level: UILabel!
     @IBOutlet weak var score: UILabel!
@@ -37,12 +38,40 @@ class VSFrameController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         db = Firestore.firestore()
-        
+        getCurrentData();
         // Do any additional setup after loading the view, typically from a nib.
         timer = Timer.scheduledTimer(timeInterval: speed, target: self, selector: #selector(generateTarget), userInfo: nil, repeats: true)
         let countTime = Timer.scheduledTimer(timeInterval: timerCount, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
+    func getCurrentData() {
+        db.collection("rooms").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    //print("\(document.documentID) => \(document.data())")
+                    let currentRoom = document.data()["RoomID"] as? String;
+                    if(currentRoom == self.roomID) {
+                        print(document.data());
+                        
+                        let currentPlayer1 = document.data()["player1"] as? String;
+                        self.player1.text = currentPlayer1;
+                        let currentPlayer2 = document.data()["player2"] as? String;
+                        self.player2.text = currentPlayer2;
+                        let currentScore1 = document.data()["score1"] as? NSNumber;
+                        self.score.text = "Score: "+(currentScore1?.stringValue)!
+                        let currentScore2 = document.data()["score2"] as? NSNumber;
+                        self.score2.text = "Score: "+(currentScore2?.stringValue)!
+                        let currentLevel1 = document.data()["level1"] as? NSNumber;
+                        self.level.text = "Level: "+(currentLevel1?.stringValue)!
+                        let currentLevel2 = document.data()["level2"] as? NSNumber;
+                        self.level2.text = "Level: "+(currentLevel2?.stringValue)!
+                    }
+                }
+            }
+        }
+    }
     @objc func generateTarget() {
         let button = UIButton();
         button.setTitle("Add", for: .normal)

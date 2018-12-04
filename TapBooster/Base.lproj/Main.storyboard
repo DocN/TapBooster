@@ -619,10 +619,13 @@
                         <viewLayoutGuide key="safeArea" id="35H-4a-e6J"/>
                     </view>
                     <connections>
+                        <outlet property="level" destination="K8b-xJ-r4t" id="n3T-O4-IwR"/>
                         <outlet property="level2" destination="8TQ-E5-Yqg" id="Ucg-yp-MlH"/>
                         <outlet property="player1" destination="DSo-dZ-snF" id="PU0-va-xug"/>
                         <outlet property="player2" destination="htj-8m-WQd" id="mzs-zD-eO3"/>
+                        <outlet property="score" destination="Cau-Hb-BuC" id="9h6-nv-MV6"/>
                         <outlet property="score2" destination="pER-tl-TIS" id="kx8-jc-FJe"/>
+                        <outlet property="time" destination="z7e-X3-D0g" id="lEz-sg-eFi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IaY-SY-hiP" userLabel="First Responder" sceneMemberID="firstResponder"/>
