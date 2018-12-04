@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class SingleplayerController: UIViewController {
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var level: UILabel!
     @IBOutlet weak var score: UILabel!
     
+    var db: Firestore!
     var scoreValue = 0;
     var scoreTitle = "Score: ";
     var levelScore = 0;
@@ -27,6 +29,8 @@ class SingleplayerController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        db = Firestore.firestore()
+
         // Do any additional setup after loading the view, typically from a nib.
         timer = Timer.scheduledTimer(timeInterval: speed, target: self, selector: #selector(generateTarget), userInfo: nil, repeats: true)
         let countTime = Timer.scheduledTimer(timeInterval: timerCount, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
@@ -40,7 +44,7 @@ class SingleplayerController: UIViewController {
         let screenSize = UIScreen.main.bounds
         let btnWidth = CGFloat.random(in: 20..<(100))
         let randomXPos = CGFloat.random(in: 0..<(screenSize.width - btnWidth))
-        let randomYPos = CGFloat.random(in: 300..<(screenSize.height - btnWidth))
+        let randomYPos = CGFloat.random(in: 200..<(screenSize.height - btnWidth))
         button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
         
         button.frame = CGRect(x: randomXPos, y: randomYPos, width: btnWidth, height: btnWidth)

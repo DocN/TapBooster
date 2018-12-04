@@ -1,0 +1,6 @@
+framework module Pods_TapBoosterTests {
+  umbrella header "Pods-TapBoosterTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
