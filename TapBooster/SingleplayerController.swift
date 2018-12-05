@@ -26,6 +26,7 @@ class SingleplayerController: UIViewController {
     var speed = 1.0;
     var timerCount = 1.0;
     var timer = Timer();
+    var yourCircles = 0;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +51,21 @@ class SingleplayerController: UIViewController {
         button.frame = CGRect(x: randomXPos, y: randomYPos, width: btnWidth, height: btnWidth)
 
         self.view.addSubview(button)
-        
+        self.yourCircles=self.yourCircles+1;
         print("Timer fired!")
+        if(self.yourCircles >= 15) {
+            //YouLoseASeg
+            self.performSegue(withIdentifier: "YouLoseASeg", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "YouLoseASeg" {
+            // telling the compiler what type of VC the sugue.destination is
+            let destinationVC = segue.destination as! VictoryScreenController
+            destinationVC.lost = true;
+            destinationVC.finalScore = self.scoreValue;
+        }
     }
     
     @objc func updateTimer() {
@@ -62,6 +76,7 @@ class SingleplayerController: UIViewController {
     @objc func buttonClicked(sender : UIButton){
         scoreValue = scoreValue+1;
         levelScore = levelScore+1;
+        self.yourCircles=self.yourCircles-1;
         score.text = scoreTitle+String(scoreValue);
         checkLevelUp();
         sender.isHidden = true;

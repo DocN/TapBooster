@@ -55,7 +55,7 @@ class WaitingRoomJoinController: UIViewController {
                     let currentStarted = document.data()["Started"] as? Bool;
                     if(currentRoom == self.roomid) {
                         if(currentStarted == true) {
-                            self.performSegue(withIdentifier: "CreateRoomSeg", sender: self)
+                            self.performSegue(withIdentifier: "JoinAGameSegway", sender: self)
                         }
                     }
                 }
@@ -64,10 +64,11 @@ class WaitingRoomJoinController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "CreateRoomSeg" {
+        if segue.identifier == "JoinAGameSegway" {
             // telling the compiler what type of VC the sugue.destination is
-            let destinationVC = segue.destination as! WaitingRoomController
-            destinationVC.roomid = roomid;
+            let destinationVC = segue.destination as! VSFrameController
+            destinationVC.roomID = roomid;
+            destinationVC.playerOneOrTwo = false;
         }
     }
 }

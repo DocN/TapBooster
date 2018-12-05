@@ -39,6 +39,7 @@ class WaitingRoomController: UIViewController {
             "score2": 0,
             "level1": 0,
             "level2": 0,
+            "loser": "",
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
@@ -85,6 +86,7 @@ class WaitingRoomController: UIViewController {
             // telling the compiler what type of VC the sugue.destination is
             let destinationVC = segue.destination as! VSFrameController
             destinationVC.roomID = roomid;
+            destinationVC.playerOneOrTwo = true;
         }
     }
     

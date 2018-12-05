@@ -12,6 +12,7 @@
 		1504EDA921B62EA500A29908 /* WaitingRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1504EDA821B62EA500A29908 /* WaitingRoomController.swift */; };
 		1504EDAF21B63B9800A29908 /* EnterNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1504EDAE21B63B9800A29908 /* EnterNameController.swift */; };
 		1504EDB121B660E600A29908 /* JoinAGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1504EDB021B660E600A29908 /* JoinAGameController.swift */; };
+		15662E3D21B7629700192D96 /* VictoryScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15662E3C21B7629700192D96 /* VictoryScreenController.swift */; };
 		159783832181824A000B89CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159783822181824A000B89CA /* AppDelegate.swift */; };
 		159783852181824A000B89CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159783842181824A000B89CA /* ViewController.swift */; };
 		159783882181824A000B89CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 159783862181824A000B89CA /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		1504EDA821B62EA500A29908 /* WaitingRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomController.swift; sourceTree = "<group>"; };
 		1504EDAE21B63B9800A29908 /* EnterNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNameController.swift; sourceTree = "<group>"; };
 		1504EDB021B660E600A29908 /* JoinAGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinAGameController.swift; sourceTree = "<group>"; };
+		15662E3C21B7629700192D96 /* VictoryScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryScreenController.swift; sourceTree = "<group>"; };
 		1597837F2181824A000B89CA /* TapBooster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapBooster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		159783822181824A000B89CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		159783842181824A000B89CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				1504EDA821B62EA500A29908 /* WaitingRoomController.swift */,
 				15C3DFBB21B66CE700972269 /* WaitingRoomJoinController.swift */,
 				1504EDB021B660E600A29908 /* JoinAGameController.swift */,
+				15662E3C21B7629700192D96 /* VictoryScreenController.swift */,
 				159783862181824A000B89CA /* Main.storyboard */,
 				159783892181824C000B89CA /* Assets.xcassets */,
 				1597838B2181824C000B89CA /* LaunchScreen.storyboard */,
@@ -463,6 +466,7 @@
 				1504EDAF21B63B9800A29908 /* EnterNameController.swift in Sources */,
 				15C3DFBE21B678AF00972269 /* VSFrameController.swift in Sources */,
 				159783832181824A000B89CA /* AppDelegate.swift in Sources */,
+				15662E3D21B7629700192D96 /* VictoryScreenController.swift in Sources */,
 				159783B32182D883000B89CA /* SingleplayerController.swift in Sources */,
 				1504EDB121B660E600A29908 /* JoinAGameController.swift in Sources */,
 				1504EDA921B62EA500A29908 /* WaitingRoomController.swift in Sources */,

@@ -46,7 +46,7 @@ class JoinAGameController: UIViewController {
                     //print("\(document.documentID) => \(document.data())")
                     let currentRoom = (document.data()["RoomID"]) as? String;
                     let currentPassword = (document.data()["Password"]) as? String;
-                    if(roomID==currentRoom || password==currentPassword) {
+                    if(roomID==currentRoom && password==currentPassword) {
                         let washingtonRef = self.db.collection("rooms").document(document.documentID)
                         
                         // Set the "capital" field of the city 'DC'
